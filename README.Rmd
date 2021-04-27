@@ -62,7 +62,7 @@ fish_long %>%
     alpha = 0.5, 
     position = "identity"
   ) +
-  scale_fill_manual(values = c("darkorange","cyan4")) +
+  #scale_fill_manual(values = c("darkorange","cyan4")) +
   theme_minimal()
 ```
 
@@ -82,7 +82,7 @@ Graph the distribution of body temperatures for each crab type:
 
 ```{r}
 crab <- read_csv("chap15q27FiddlerCrabFans.csv")
-
+crab <- na.omit(crab)
 crab %>% 
   ggplot(aes(x = bodyTemperature)) +
   geom_histogram(

@@ -89,7 +89,7 @@ fish_long %>%
     alpha = 0.5, 
     position = "identity"
   ) +
-  scale_fill_manual(values = c("darkorange","cyan4")) +
+  #scale_fill_manual(values = c("darkorange","cyan4")) +
   theme_minimal()
 ```
 
@@ -132,6 +132,7 @@ crab <- read_csv("chap15q27FiddlerCrabFans.csv")
     ## )
 
 ``` r
+crab <- na.omit(crab)
 crab %>% 
   ggplot(aes(x = bodyTemperature)) +
   geom_histogram(
@@ -175,7 +176,6 @@ aov_crab_claw
     ## 
     ## Residual standard error: 0.2081952
     ## Estimated effects may be unbalanced
-    ## 1 observation deleted due to missingness
 
 ``` r
 summary(aov_crab_claw)
@@ -186,4 +186,3 @@ summary(aov_crab_claw)
     ## Residuals   80  3.468  0.0433                   
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-    ## 1 observation deleted due to missingness
